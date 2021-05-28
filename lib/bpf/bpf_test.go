@@ -30,7 +30,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/gravitational/teleport"
+	"github.com/gravitational/teleport/api/constants"
 	"github.com/gravitational/teleport/lib/defaults"
 	"github.com/gravitational/teleport/lib/events"
 
@@ -86,9 +86,9 @@ func (s *Suite) TestWatch(c *check.C) {
 		PID:       cmd.Process.Pid,
 		Emitter:   emitter,
 		Events: map[string]bool{
-			teleport.EnhancedRecordingCommand: true,
-			teleport.EnhancedRecordingDisk:    true,
-			teleport.EnhancedRecordingNetwork: true,
+			constants.EnhancedRecordingCommand: true,
+			constants.EnhancedRecordingDisk:    true,
+			constants.EnhancedRecordingNetwork: true,
 		},
 	})
 	c.Assert(err, check.IsNil)
